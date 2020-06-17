@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pno: 1
+  pname: MyString
+  location: MyString
+  employees: 1
+
+two:
+  pno: 1
+  pname: MyString
+  location: MyString
+  employees: 1
