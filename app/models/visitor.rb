@@ -1,3 +1,3 @@
 class Visitor < ApplicationRecord
-    has_one :park
+    belongs_to :park, optional: true
 end

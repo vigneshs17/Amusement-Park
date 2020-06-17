@@ -24,6 +24,16 @@
   </div>
   
   <div class="field">
+    <%= f.label :"Park where you work" %><br />
+    <%= select_tag(:works_for, options_for_select(@park_options)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Ride that you operate" %><br />
+    <%= select_tag(:operates, options_for_select(@ride_options)) %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>

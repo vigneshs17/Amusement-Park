@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Rno:</strong>
+  <strong>Ride number:</strong>
   <%= @ride.rno %>
 </p>
 
 <p>
-  <strong>Rname:</strong>
+  <strong>Ride name:</strong>
   <%= @ride.rname %>
+</p>
+
+<p>
+  <strong>Park name:</strong>
+  <%= @ride.exists_in %>
 </p>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |

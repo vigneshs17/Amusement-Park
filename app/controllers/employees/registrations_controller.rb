@@ -5,19 +5,25 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @park_options = Park.all.map{|p| [p.pname]}
+    @ride_options = Ride.all.map{|r| [r.rname]}
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @park_options = Park.all.map{|p| [p.pname]}
+    @ride_options = Ride.all.map{|r| [r.rname]}
+    super
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @park_options = Park.all.map{|p| [p.pname]}
+    @ride_options = Ride.all.map{|r| [r.rname]}
+    super
+  end
 
   # PUT /resource
   # def update

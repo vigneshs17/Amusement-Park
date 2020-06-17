@@ -5,25 +5,36 @@ class VisitorsController < ApplicationController
   # GET /visitors.json
   def index
     @visitors = Visitor.all
+    @park = Park.all
+    @park_options = Park.all.map{|p| [p.pname, p.pno]}
+    
   end
 
   # GET /visitors/1
   # GET /visitors/1.json
   def show
+    @visitors = Visitor.all
+    @park = Park.all
+    @park_options = Park.all.map{|p| [p.pname, p.pno]}
   end
 
   # GET /visitors/new
   def new
+    @park = Park.find_by(params[:pno])
+    @park_options = Park.all.map{|p| [p.pname, p.pno]}
     @visitor = Visitor.new
   end
 
   # GET /visitors/1/edit
   def edit
+    @park_options = Park.all.map{|p| [p.pname, p.pno]}
   end
 
   # POST /visitors
   # POST /visitors.json
   def create
+    @park = Park.find_by(params[:visitor["visits"]])
+    @park_options = Park.all.map{|p| [p.pname, p.pno]}
     @visitor = Visitor.new(visitor_params)
 
     respond_to do |format|
@@ -69,6 +80,6 @@ class VisitorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def visitor_params
-      params.require(:visitor).permit(:vname, :vemail, :contact, :visitDate, :noOfTickets)
+      params.require(:visitor).permit(:vname, :vemail, :contact, :visitDate, :noOfTickets, :visits)
     end
 end

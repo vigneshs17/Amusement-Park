@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :"E-mail" %>
-    <%= form.text_field :vemail, readonly:true%>
+    <%= form.text_field :vemail%>
   </div>
 
   <div class="field">
@@ -34,6 +34,11 @@
   <div class="field">
     <%= form.label :"Number of tickets" %>
     <%= form.number_field :noOfTickets %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Park you would like to visit" %>
+    <%= select(:visitor, :visits, @park_options) %>
   </div>
 
   <div class="actions">

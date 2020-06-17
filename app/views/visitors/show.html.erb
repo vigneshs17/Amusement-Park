@@ -25,5 +25,12 @@
   <%= @visitor.noOfTickets %>
 </p>
 
+<p>
+  <strong>Park visited:</strong>
+  <%= @visitor.visits %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_visitor_path(@visitor) %> |
 <%= link_to 'Back', visitors_path %>

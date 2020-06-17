@@ -21,6 +21,11 @@
     <%= form.text_field :rname %>
   </div>
 
+  <div class="field">
+    <%= form.label :"Park that the ride belongs to" %>
+    <%= select(:ride, :exists_in, @park_options) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

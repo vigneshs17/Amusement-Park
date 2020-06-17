@@ -10,7 +10,8 @@
       <th>Contact</th>
       <th>Date of Visit</th>
       <th>Number of tickets</th>
-      <th colspan="5"></th>
+      <th>Park visited</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
@@ -22,6 +23,7 @@
         <td><%= visitor.contact %></td>
         <td><%= visitor.visitDate %></td>
         <td><%= visitor.noOfTickets %></td>
+        <td><%= visitor.visits %></td>
         <td><%= link_to 'Show', visitor %></td>
       </tr>
     <% end %>

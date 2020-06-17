@@ -7,7 +7,8 @@
     <tr>
       <th>Ride number</th>
       <th>Ride name</th>
-      <th colspan="2"></th>
+      <th>Park name</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -16,6 +17,7 @@
       <tr>
         <td><%= ride.rno %></td>
         <td><%= ride.rname %></td>
+        <td><%= ride.exists_in %></td>
         <td><%= link_to 'Show', ride %></td>
         <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
         <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
