@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body {
+        background: url("/assets/151205.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%
+        overflow: hidden;
+        font-family: 'Bangers', cursive;
+        font-size-adjust: auto;
+        font-size: 20px;
+      }
+      * {box-sizing: border-box}
+
+      /* Full-width input fields */
+      input {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      select {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      select:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      input:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      .content {
+        background: white;
+        width: 35%;
+        padding: 40px;
+        margin: 100px auto;
+      }
+
+      h2{
+        text-shadow: 1px 1px black;
+        font-size: 60px;
+        color: #272748;
+        text-align: center;
+
+      }
+
+      p{
+        font-size: 20px;
+        text-align: center;
+        /*line-height: 2;*/
+        letter-spacing: 1px;
+        color: #272748;
+        text-shadow: 1px 1px black;
+
+
+      }
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: #272748;
+        align: center;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+    </style>
+    <meta charset="utf-8">
+    <%= csrf_meta_tags %>
+    <title>Tickets</title>
+  </head>
+  <body>
+
+    <div class="content">
+      <h2>Ticket</h2>
+      <%= form_with scope: :visitor, url: visitors_path, local: true do |f| %>
+        <hr>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="visitor[vname]" id="visitor_vname" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="visitor[vemail]" id="visitor_vemail" required>
+
+        <label for="pnumber"><b>Mobile Number</b></label>
+        <input type="text" placeholder="Enter Mobile Number" name="visitor[contact]" id="visitor_contact" required>
+
+        <label for="not"><b>Number of Tickets</b></label>
+        <input type="number" placeholder="Enter Number of Tickets" name="visitor[noOfTickets]" id="visitor_noOfTickets" required>
+
+        <label for="date"><b>Date</b></label>
+        <input type="date" placeholder="Enter Date" name="visitor[visitDate]" id="visitor_visitDate" required>
+
+        <label for="parko"><b>Select Park</b></label>
+        <select name="visitor[parko]" id="visitor_parko" required>
+          <option value="bollywood">Bollywood Park</option>
+          <option value="aladdin">Aladdin Park</option>
+          <option value="thrill">Thrill Park</option>
+          <option value="waterworld">Wild Waterworld</option>
+        </select>
+
+        <hr>
+        <p>Each ticket cost Rs 2600 for each park</p>
+        <p>By clicking on buy you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <p align="center">
+          <a href="/"> <button class="button">GO BACK</button></a>
+          <button type="submit" class="button">BUY</button>
+        </p>
+      <% end %>
+    </div>
+  </body>
+</html>

@@ -25,16 +25,17 @@ class VisitorsController < ApplicationController
   # POST /visitors.json
   def create
     @visitor = Visitor.new(visitor_params)
-
-    respond_to do |format|
-      if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
-        format.json { render :show, status: :created, location: @visitor }
-      else
-        format.html { render :new }
-        format.json { render json: @visitor.errors, status: :unprocessable_entity }
-      end
-    end
+    @visitor.save
+    redirect_to thank_path
+#    respond_to do |format|
+#      if @visitor.save
+#        format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
+#        format.json { render :show, status: :created, location: @visitor }
+#      else
+#        format.html { render :new }
+#        format.json { render json: @visitor.errors, status: :unprocessable_entity }
+#      end
+#    end
   end
 
   # PATCH/PUT /visitors/1

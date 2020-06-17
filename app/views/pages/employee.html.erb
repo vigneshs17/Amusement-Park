@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body{
+        background: url("/assets/151205.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%
+        overflow: hidden;
+        font-family: 'Bangers', cursive;
+        font-size-adjust: auto;
+        font-size: 20px;
+      }
+      * {box-sizing: border-box}
+
+      /* Full-width input fields */
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      .content {
+        background: white;
+        width: 35%;
+        padding: 40px;
+        margin: 100px auto;
+      }
+
+      h2{
+        text-shadow: 1px 1px black;
+        font-size: 60px;
+        color: #272748;
+        text-align: center;
+
+      }
+
+      p{
+        font-size: 20px;
+        text-align: center;
+        /*line-height: 2;*/
+        letter-spacing: 1px;
+        color: #272748;
+        text-shadow: 1px 1px black;
+
+
+      }
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: #272748;
+        align: center;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+    </style>
+    <meta charset="utf-8">
+    <title>Tickets</title>
+  </head>
+  <body>
+
+    <div class="content">
+      <h2>Employee Login</h2>
+      <form action="hello" method="post">
+        <hr>
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+        <label for="password"><b>password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+        <hr>
+        <p align="center">
+          <a href="/"> <button class="button">GO BACK</button></a>
+          <button type="submit" class="button">LOGIN</button>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
