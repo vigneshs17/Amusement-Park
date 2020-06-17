@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AmusementPark</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+ <head>  
+<title>Amusement Park</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all',
+                             'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",  employee_session , class: "btn "%></li>
+        <% if employee_signed_in? %>
+          <li><%= link_to "Account", edit_employee_registration_path, class: "btn "  %></li>
+          <li><%= link_to "Parks", parks_path, class: "btn" %></li>
+          <li><%= link_to "Rides", rides_path, class: "btn" %></li>
+          <li><%= link_to "Visitors", visitors_path, class: "btn" %></li>
+          <li>
+            <%= link_to('Logout', destroy_employee_session_path, method: :delete) %>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_employee_registration_path, class: "btn " %></li>
+          <li><%= link_to "Sign In", new_employee_session_path, class: "btn " %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>

@@ -4,23 +4,23 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :ename %><br />
-    <%= f.email_field :ename, autofocus: true %>
+    <%= f.label :"Employee name" %><br />
+    <%= f.text_field :ename, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.email_field :age %>
+    <%= f.label :"Age" %><br />
+    <%= f.number_field :age %>
   </div>
   
   <div class="field">
-    <%= f.label :post %><br />
-    <%= f.email_field :post %>
+    <%= f.label :"Post" %><br />
+    <%= f.text_field :post %>
   </div>
 
   <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.email_field :gender %>
+    <%= f.label :"Gender" %><br />
+    <%= f.text_field :gender %>
   </div>
   
   <div class="field">

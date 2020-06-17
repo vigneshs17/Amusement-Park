@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :vname %>
+    <%= form.label :Name %>
     <%= form.text_field :vname %>
   </div>
 
   <div class="field">
-    <%= form.label :vemail %>
-    <%= form.text_field :vemail %>
+    <%= form.label :"E-mail" %>
+    <%= form.text_field :vemail, readonly:true%>
   </div>
 
   <div class="field">
-    <%= form.label :contact %>
+    <%= form.label :Contact %>
     <%= form.text_field :contact %>
   </div>
 
   <div class="field">
-    <%= form.label :visitDate %>
-    <%= form.date_select :visitDate %>
+    <%= form.label :"Date of visit" %>
+    <%= form.date_select :visitDate , value:Date.today, readonly:true %>
   </div>
 
   <div class="field">
-    <%= form.label :noOfTickets %>
+    <%= form.label :"Number of tickets" %>
     <%= form.number_field :noOfTickets %>
   </div>
 

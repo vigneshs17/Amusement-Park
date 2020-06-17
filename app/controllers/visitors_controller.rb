@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController
+  before_action :authenticate_employee!
   before_action :set_visitor, only: [:show, :edit, :update, :destroy]
-
   # GET /visitors
   # GET /visitors.json
   def index

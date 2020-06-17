@@ -1,4 +1,5 @@
 class ParksController < ApplicationController
+  before_action :authenticate_employee!
   before_action :set_park, only: [:show, :edit, :update, :destroy]
 
   # GET /parks

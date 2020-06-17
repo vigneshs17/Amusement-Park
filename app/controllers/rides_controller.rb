@@ -1,4 +1,5 @@
 class RidesController < ApplicationController
+  before_action :authenticate_employee!
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
 
   # GET /rides
