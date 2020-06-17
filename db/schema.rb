@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_073218) do
+ActiveRecord::Schema.define(version: 2020_06_17_085849) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,8 +25,12 @@ ActiveRecord::Schema.define(version: 2020_06_17_073218) do
     t.bigint "contact"
     t.string "post"
     t.string "gender"
+    t.bigint "works_for"
+    t.bigint "operates"
     t.index ["email"], name: "index_employees_on_email", unique: true
+    t.index ["operates"], name: "fk_rails_470df86b50"
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+    t.index ["works_for"], name: "fk_rails_b908e05a5f"
   end
 
   create_table "parks", primary_key: "pno", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,8 +43,10 @@ ActiveRecord::Schema.define(version: 2020_06_17_073218) do
 
   create_table "rides", primary_key: "rno", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "rname"
+    t.bigint "exists_in"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["exists_in"], name: "fk_rails_9d1974df89"
   end
 
   create_table "visitors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,9 +54,15 @@ ActiveRecord::Schema.define(version: 2020_06_17_073218) do
     t.string "vemail"
     t.bigint "contact"
     t.date "visitDate"
+    t.bigint "visits"
     t.integer "noOfTickets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["visits"], name: "fk_rails_c5b06a6229"
   end
 
+  add_foreign_key "employees", "parks", column: "works_for", primary_key: "pno"
+  add_foreign_key "employees", "rides", column: "operates", primary_key: "rno"
+  add_foreign_key "rides", "parks", column: "exists_in", primary_key: "pno"
+  add_foreign_key "visitors", "parks", column: "visits", primary_key: "pno"
 end
