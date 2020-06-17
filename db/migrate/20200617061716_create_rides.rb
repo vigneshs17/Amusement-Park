@@ -8,7 +8,7 @@ class CreateRides < ActiveRecord::Migration[5.2]
     create_table :rides, id: false do |t|
       t.primary_key :rno
       t.string :rname
-
+      t.bigint :exists_in
       t.timestamps
     end
   end

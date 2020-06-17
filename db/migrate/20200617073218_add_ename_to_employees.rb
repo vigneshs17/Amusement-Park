@@ -5,5 +5,7 @@ class AddEnameToEmployees < ActiveRecord::Migration[5.2]
     add_column :employees, :contact, :bigint
     add_column :employees, :post, :string
     add_column :employees, :gender, :string
+    add_column :employees, :works_for, :bigint, :references => "rides"
+    add_column :employees, :operates, :bigint, :references => "parks"
   end
 end

@@ -5,6 +5,7 @@ class CreateVisitors < ActiveRecord::Migration[5.2]
       t.string :vemail
       t.bigint :contact
       t.date :visitDate
+      t.bigint :visits
       t.integer :noOfTickets
 
       t.timestamps
