@@ -1,24 +1,19 @@
-# README
+# Database Management System for an Amusement Park
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code for the database management system for an amusement park. This satisfies the course requirements for the course Database Systems Lab (CS254). 
+This project is submitted by 
+1. Vignesh Srinivasan - 181CO258
+2. Danish Waseem - 181CO116
 
-Things you may want to cover:
+This project was implemented using RubyOnRails and MySQL as the database server.
 
-* Ruby version
+The report alongside this contains further detailed information about the application.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Steps for set up:
+1. Clone this repository
+2. `cd Amusement-Park`
+3. Run `bundle install` to install all dependencies required to run the application
+4. Run `rails db:drop db:create db:migrate` to set up the database
+5. Run `rails s` to start the rails server
+6. Visit `localhost:3000/parks`
+7. You will be prompted to log in or sign up. Please sign up if you are a new user. Else you can log in with your credentials.
