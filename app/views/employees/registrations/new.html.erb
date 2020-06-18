@@ -1,59 +1,135 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body{
+        background: url("/assets/151205.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%
+        overflow: hidden;
+        font-family: 'Bangers', cursive;
+        font-size-adjust: auto;
+        font-size: 20px;
+      }
+      * {box-sizing: border-box}
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      .content {
+        background: white;
+        width: 30%;
+        padding: 40px;
+        margin: 100px auto;
+      }
 
-  <div class="field">
-    <%= f.label :"Name" %><br />
-    <%= f.text_field :ename, autofocus: true %>
-  </div>
+      h2{
+        text-shadow: 1px 1px black;
+        font-size: 60px;
+        color: #272748;
+        text-align: center;
 
-  <div class="field">
-    <%= f.label :"Age" %><br />
-    <%= f.number_field :age %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :"Post" %><br />
-    <%= f.text_field :post %>
-  </div>
+      }
+      h3{
+        font-size: 22px;
+        color: #272748;
+        text-align: left;
+      }
 
-  <div class="field">
-    <%= f.label :"Gender" %><br />
-    <%= f.text_field :gender %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :"Park where you work" %><br />
-    <%= select_tag(:works_for, options_for_select(@park_options)) %>
-  </div>
 
-  <div class="field">
-    <%= f.label :"Ride that you operate" %><br />
-    <%= select_tag(:operates, options_for_select(@ride_options)) %>
-  </div>
+      p{
+        font-size: 16px;
+        text-align: left;
+        /*line-height: 2;*/
+        letter-spacing: 1px;
+        color: black;
+        font-family: Verdana, Geneva, sans-serif;
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      }
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: #272748;
+        align: center;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    </style>
+    <meta charset="utf-8">
+  </head>
+  <body>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="content">
+      <h2>Sign up</h2>
 
-<%= render "employees/shared/links" %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :"Name" %><br />
+          <%= f.text_field :ename, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Age" %><br />
+          <%= f.number_field :age %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Post" %><br />
+          <%= f.text_field :post %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Gender" %><br />
+          <%= f.text_field :gender %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Park where you work" %><br />
+          <%= select_tag(:works_for, options_for_select(@park_options)) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Ride that you operate" %><br />
+          <%= select_tag(:operates, options_for_select(@ride_options)) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "button" %>
+        </div>
+      <% end %>
+
+      <%= render "employees/shared/links" %>
+    </div>
+  </body>
+</html>
