@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :"Date of visit" %>
-    <%= form.date_select :visitDate , value:Date.today, readonly:true %>
+    <%= form.date_field :visitDate , value:Date.today, readonly:true %>
   </div>
 
   <div class="field">
     <%= form.label :"Number of tickets" %>
-    <%= form.number_field :noOfTickets %>
+    <%= form.number_field :noOfTickets, min: 1%>
   </div>
 
   <div class="field">
