@@ -15,5 +15,5 @@ Steps for set up:
 3. Run `bundle install` to install all dependencies required to run the application
 4. Run `rails db:drop db:create db:migrate` to set up the database
 5. Run `rails s` to start the rails server
-6. Visit `localhost:3000/parks`
+6. Visit `localhost:3000`
 7. You will be prompted to log in or sign up. Please sign up if you are a new user. Else you can log in with your credentials.

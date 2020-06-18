@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'parks#index'
   devise_for :employees, controllers: { registrations: 'employees/registrations' }
   resources :visitors
   resources :parks
