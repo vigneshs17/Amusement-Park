@@ -90,13 +90,13 @@
             <p align="center">
               <a href="/"> <button class="button">GO BACK</button></a>
               <% if employee_signed_in? %>                  <%= link_to "Account", edit_employee_registration_path, class: "button"  %>
-                <%= link_to "Parks", parks_path, class: "btn" %>
-                <%= link_to "Rides", rides_path, class: "btn" %>
-                <%= link_to "Visitors", visitors_path, class: "btn" %>
-                <%= link_to('Logout', destroy_employee_session_path, method: :delete, class:"button") %>
+                <%= link_to "PARKS", parks_path, class: "btn" %>
+                <%= link_to "RIDES", rides_path, class: "btn" %>
+                <%= link_to "VISITORS", visitors_path, class: "btn" %>
+                <%= link_to('LOGOUT', destroy_employee_session_path, method: :delete, class:"button") %>
               <% else %>
-                <%= link_to "Sign Up", new_employee_registration_path, class: "button" %>
-                <%= link_to "Sign In", new_employee_session_path, class: "button" %>
+                <%= link_to "SIGN UP", new_employee_registration_path, class: "button" %>
+                <%= link_to "SIGN IN", new_employee_session_path, class: "button" %>
               <% end %>
             </p>
           </nav>

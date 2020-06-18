@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
     @visitors = Visitor.all
     @park = Park.all.map{|p| [p.pname, p.pno]}
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
-    
+
   end
 
   # GET /visitors/1
@@ -36,16 +36,7 @@ class VisitorsController < ApplicationController
     @park = Park.find_by(params[:visitor["visits"]])
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
     @visitor = Visitor.new(visitor_params)
-
-    respond_to do |format|
-      if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
-        format.json { render :show, status: :created, location: @visitor }
-      else
-        format.html { render :new }
-        format.json { render json: @visitor.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to thank_path
   end
 
   # PATCH/PUT /visitors/1

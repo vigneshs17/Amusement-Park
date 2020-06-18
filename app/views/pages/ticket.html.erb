@@ -115,13 +115,15 @@
         <label for="date"><b>Date</b></label>
         <input type="date" placeholder="Enter Date" name="visitor[date]" id="visitor_date" required>
 
-        <label for="parko"><b>Select Park</b></label>
-        <select name="visitor[parko]" id="visitor_parko" required>
-          <option value="bollywood">Bollywood Park</option>
-          <option value="aladdin">Aladdin Park</option>
-          <option value="thrill">Thrill Park</option>
-          <option value="waterworld">Wild Waterworld</option>
-        </select>
+        <div class="field">
+          <%= f.label :"Park you would like to visit" %>
+          <select name="visitor[visits]" id="visitor_visits" required>
+            <option value="Bollywood Park">Bollywood Park</option>
+            <option value="Aladdin Park">Aladdin Park</option>
+            <option value="Thrill Park">Thrill Park</option>
+            <option value="Wild Waterworld">Wild Waterworld</option>
+          </select>
+        </div>
 
         <hr>
         <p>Each ticket cost Rs 2600 for each park</p>
