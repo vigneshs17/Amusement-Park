@@ -5,7 +5,7 @@ class VisitorsController < ApplicationController
   # GET /visitors.json
   def index
     @visitors = Visitor.all
-    @park = Park.all
+    @park = Park.all.map{|p| [p.pname, p.pno]}
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
     
   end
@@ -14,7 +14,7 @@ class VisitorsController < ApplicationController
   # GET /visitors/1.json
   def show
     @visitors = Visitor.all
-    @park = Park.all
+    @park = Park.all.map{|p| [p.pname, p.pno]}
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
   end
 

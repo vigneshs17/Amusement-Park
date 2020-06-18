@@ -5,6 +5,7 @@ class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def index
+    @park = Park.all.map{|p| [p.pname, p.pno]}
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
     @rides = Ride.all
   end
@@ -12,6 +13,7 @@ class RidesController < ApplicationController
   # GET /rides/1
   # GET /rides/1.json
   def show
+    @park = Park.all.map{|p| [p.pname, p.pno]}
     @park_options = Park.all.map{|p| [p.pname, p.pno]}
   end
 

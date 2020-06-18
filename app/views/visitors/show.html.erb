@@ -27,7 +27,7 @@
 
 <p>
   <strong>Park visited:</strong>
-  <%= @visitor.visits %>
+  <%= @park["#{@visitor.visits}".to_i-1][0] %>
 </p>
 
 

@@ -23,7 +23,7 @@
         <td><%= visitor.contact %></td>
         <td><%= visitor.visitDate %></td>
         <td><%= visitor.noOfTickets %></td>
-        <td><%= visitor.visits %></td>
+        <td><%= @park["#{visitor.visits}".to_i-1][0] %></td>
         <td><%= link_to 'Show', visitor %></td>
       </tr>
     <% end %>

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Park name:</strong>
-  <%= @ride.exists_in %>
+  <%= @park["#{@ride.exists_in}".to_i-1][0] %>
 </p>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
