@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_06_17_085849) do
   create_table "parks", primary_key: "pno", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "pname"
     t.string "location"
-    t.integer "employees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

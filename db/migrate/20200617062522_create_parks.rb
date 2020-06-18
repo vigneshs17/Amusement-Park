@@ -8,7 +8,6 @@ class CreateParks < ActiveRecord::Migration[5.2]
       t.primary_key :pno
       t.string :pname
       t.string :location
-      t.integer :employees
 
       t.timestamps
     end
